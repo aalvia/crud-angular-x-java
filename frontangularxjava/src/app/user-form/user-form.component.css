@@ -1,0 +1,61 @@
+.container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para el título del formulario */
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Estilo para los campos del formulario */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para el botón de agregar usuario */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+}
+
+/* Estilo para el overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el overlay se muestre sobre todo */
+  }
+  
+  /* Estilo para el spinner o indicador de carga */
+  .spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Animación de giro para el spinner */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

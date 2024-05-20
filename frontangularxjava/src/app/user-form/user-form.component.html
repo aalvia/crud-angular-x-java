@@ -1,0 +1,89 @@
+<div class="container mt-5">
+  <div class="form-container">
+    <h2 class="mb-4 text-center">Agregar Usuario</h2>
+    <form (ngSubmit)="addUser(userForm)" class="user-form" #userForm="ngForm">
+      <div class="form-group mb-3">
+        <label for="tipoIdentificacion">Tipo Identificación:</label>
+        <input
+          [(ngModel)]="usuario.tipoIdentificacion"
+          name="tipoIdentificacion"
+          id="tipoIdentificacion"
+          required
+          maxlength="50"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="identificacion">Identificación:</label>
+        <input
+          [(ngModel)]="usuario.identificacion"
+          name="identificacion"
+          id="identificacion"
+          required (keypress)="onlyNumbers($event)"
+          maxlength="11"
+          pattern="\d{1,11}"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="nombres">Nombres:</label>
+        <input
+          [(ngModel)]="usuario.nombres"
+          name="nombres"
+          id="nombres"
+          required
+          maxlength="50"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="apellidos">Apellidos:</label>
+        <input
+          [(ngModel)]="usuario.apellidos"
+          name="apellidos"
+          id="apellidos"
+          required
+          maxlength="50"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="roles">Roles:</label>
+        <input
+          [(ngModel)]="usuario.roles"
+          name="roles"
+          id="roles"
+          required
+          maxlength="50"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="edad">Edad:</label>
+        <input
+          [(ngModel)]="usuario.edad"
+          name="edad"
+          id="edad"
+          type="number"
+          required
+          min="0"
+          max="150" (keypress)="onlyNumbers($event)"
+          class="form-control"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Agregar Usuario</button>
+    
+    </form>
+  </div>
+</div>
+<div *ngIf="isLoading" style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.7);">
+  <div class="spinner-border" role="status" style="position: fixed;top: 50%;left: 50%;">
+    <span class="sr-only"></span>
+  </div>
+</div>
